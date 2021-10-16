@@ -2,9 +2,7 @@ package calculator;
 
 class StringCalculator {
        
-    public static void main(String[] args){
-        
-    }
+    
     public int add(String input) {
 
        if(input.length() == 0)
@@ -15,11 +13,21 @@ class StringCalculator {
         {
             return Integer.parseInt(input);
         }
-        else
-        {
-            String[] str = input.split(",");
-            return Integer.parseInt(str[0])  +Integer.parseInt(str[1]);
-        }
+        else if (input.length() == 2)
+		{
+			String[] str = input.split(",");
+			return Integer.parseInt(str[0]) + Integer.parseInt(str[1]);
+		}
+		else 
+		{
+			int result =0;
+			String [] str = input.split(",");
+			for(int i=0; i<str.length; i++)
+			{
+			 result = result + Integer.parseInt(str[i]);
+			}
+			return result;
+		} 
     }
 
 }
