@@ -29,15 +29,28 @@ class StringCalculator {
 			}
 			return result;
 		} 
-        else if (input.contains("//") && input.contains("\n")){
+        else if (input.contains("//")){
 			int result =0;
-			input=input.replace("//","0");
-			input=input.replace("\n","");
+		input=input.replace("//","0");
+  		   input=input.replace("\n","");
+  		   Character split=input.charAt(1);
+	
+			String [] str = input.split(split.toString());
 			
-			String [] str = input.split(";");
 			for(int i=0; i<str.length; i++)
 			{
-			 result = result + Integer.parseInt(str[i]);
+				try 
+				{
+					if(Integer.parseInt(str[i]) >=0)
+					result = result + Integer.parseInt(str[i]);
+					else 
+						throw new Exception("negatives not allowed" +str[i]);
+					
+				} catch (Exception e) {
+					
+					System.out.println(e);
+			
+				}		
 			}
 			
 			return result;
