@@ -4,11 +4,14 @@ class StringCalculator {
 
     public int add(String input) {
 
-       if(numbers.length() == 0)
+       if(input.length() == 0)
         {
             return 0;
         }
-        
+        else if(input.length()==1)
+        {
+            return Integer.parseInt(input);
+        }
     }
 
 }
