@@ -21,7 +21,7 @@ class StringCalculator {
 		else if (input.contains("\n") && input.contains(",") )
 		{
 			int result =0;
-            input=input.replace("\n", "");
+            input=input.replace("\n", ",");
 			String [] str = input.split(",");
 			for(int i=0; i<str.length; i++)
 			{
