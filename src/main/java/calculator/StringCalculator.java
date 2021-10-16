@@ -12,6 +12,11 @@ class StringCalculator {
         {
             return Integer.parseInt(input);
         }
+        else
+        {
+            String[] str = numbers.split(",");
+            return Integer.parseInt(str[0])  +Integer.parseInt(str[1]);
+        }
     }
 
 }
