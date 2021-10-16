@@ -27,4 +27,9 @@ class StringCalculatorShould {
 	        StringCalculator stringCalculator = new StringCalculator();
 	        assertEquals(10, stringCalculator.add("1,2,3,4"));
 	 }
+      @Test
+	    void string_handle_new_lines_return_sum() {
+	        StringCalculator stringCalculator = new StringCalculator();
+	        assertEquals(15, stringCalculator.add("1\n,2\n,3,4,5"));
+	    }
 }
