@@ -18,7 +18,7 @@ class StringCalculator {
 			String[] str = input.split(",");
 			return Integer.parseInt(str[0]) + Integer.parseInt(str[1]);
 		}
-		else 
+		else if (input.contains("\n") && input.contains(",") )
 		{
 			int result =0;
             input=input.replace("\n", "");
@@ -29,6 +29,30 @@ class StringCalculator {
 			}
 			return result;
 		} 
+        else if (input.contains("//") && input.contains("\n")){
+			int result =0;
+			input=input.replace("//","0");
+			input=input.replace("\n","");
+			
+			String [] str = input.split(";");
+			for(int i=0; i<str.length; i++)
+			{
+			 result = result + Integer.parseInt(str[i]);
+			}
+			
+			return result;
+		}
+        else {
+			int result =0;
+			
+			String [] str = input.split(",");
+			for(int i=0; i<str.length; i++)
+			{
+			 result = result + Integer.parseInt(str[i]);
+			}
+			
+			return result;
+		}
     }
 
 }
