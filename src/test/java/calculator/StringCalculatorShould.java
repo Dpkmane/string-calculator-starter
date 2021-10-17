@@ -30,7 +30,7 @@ class StringCalculatorShould {
     @Test
 	    void string_handle_new_lines_return_sum() {
 	        StringCalculator stringCalculator = new StringCalculator();
-	        assertEquals(15, stringCalculator.add("1\n2,3"));
+	        assertEquals(6, stringCalculator.add("1\n2,3"));
 	    }
     @Test
 	    void string_handle_delimiter_and_return_sum() {
