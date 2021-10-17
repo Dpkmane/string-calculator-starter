@@ -36,22 +36,26 @@ class StringCalculator {
   		   Character split=input.charAt(1);
 	
 			String [] str = input.split(split.toString());
-			
+			try 
+		  {
 			for(int i=0; i<str.length; i++)
 			{
-				try 
-				{
-					if(Integer.parseInt(str[i]) >=0)
+				if(Integer.parseInt(str[i]) >=0)
 					result = result + Integer.parseInt(str[i]);
 					else 
-						throw new Exception("negatives not allowed" +str[i]);
-					
-				} catch (Exception e) {
+						throw new Exception("negatives not allowed");
+            }	
+				
+            } catch (Exception e) {
 					
 					System.out.println(e);
+                    for(int i=0;i<str.length;i++) {
+						if(Integer.parseInt(str[i]) <0)
+							System.out.println(str[i]);
+					}
 			
 				}		
-			}
+			
 			
 			return result;
 		}
